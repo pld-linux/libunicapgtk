@@ -2,7 +2,7 @@ Summary:	GTK+2 widget for the unicap video capture library
 Summary(pl.UTF-8):	Widget GTK+2 dla biblioteki przechwytywania obrazu unicap
 Name:		libunicapgtk
 Version:	0.9.8
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Libraries
 #Source0Download: http://unicap-imaging.org/download.htm
