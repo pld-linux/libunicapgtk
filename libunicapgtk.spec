@@ -2,18 +2,18 @@ Summary:	GTK+2 widget for the unicap video capture library
 Summary(pl.UTF-8):	Widget GTK+2 dla biblioteki przechwytywania obrazu unicap
 Name:		libunicapgtk
 Version:	0.9.8
-Release:	5
+Release:	6
 License:	GPL v2+
 Group:		Libraries
 #Source0Download: http://unicap-imaging.org/download.htm
 Source0:	http://unicap-imaging.org/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	e68aac64ebf1c8149f9b8009ab855dd0
 URL:		http://unicap-imaging.org/
-BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	glib2-devel >= 1:2.11.0
 BuildRequires:	gtk+2-devel >= 2:2.9.0
-BuildRequires:	libunicap-devel
+BuildRequires:	gtk-doc >= 1.4
 BuildRequires:	libucil-devel
+BuildRequires:	libunicap-devel
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libXv-devel
@@ -34,8 +34,8 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.11.0
 Requires:	gtk+2-devel >= 2:2.9.0
-Requires:	libunicap-devel
 Requires:	libucil-devel
+Requires:	libunicap-devel
 Requires:	pango-devel
 Requires:	xorg-lib-libXv-devel
 
@@ -62,6 +62,9 @@ Summary:	unicapgtk API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki unicapgtk
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for unicapgtk library.
