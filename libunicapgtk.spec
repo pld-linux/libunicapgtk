@@ -2,7 +2,7 @@ Summary:	GTK+2 widget for the unicap video capture library
 Summary(pl.UTF-8):	Widget GTK+2 dla biblioteki przechwytywania obrazu unicap
 Name:		libunicapgtk
 Version:	0.9.8
-Release:	8
+Release:	9
 License:	GPL v2+
 Group:		Libraries
 #Source0Download: http://unicap-imaging.org/download.htm
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libunicapgtk.la
+
 %find_lang unicapgtk
 
 %clean
@@ -103,7 +106,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libunicapgtk.so
-%{_libdir}/libunicapgtk.la
 %{_includedir}/unicap/unicapgtk*.h
 %{_pkgconfigdir}/libunicapgtk.pc
 
